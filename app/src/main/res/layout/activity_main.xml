@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.baidumap.MainActivity">
+
+
+    <!--地图控制(定位，卫星，指南)-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200">
+            <!--地图缩放-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ll_locationBar"
+                android:layout_alignEnd="@+id/ll_locationBar"
+                android:layout_alignRight="@+id/ll_locationBar"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:background="@mipmap/scale_bg"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_scaleUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/scale_up"/>
+
+                <ImageView
+                    android:id="@+id/iv_scaleDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/scale_down"/>
+            </LinearLayout>
+            <!--定位，卫星，指南-->
+            <LinearLayout
+                android:id="@+id/ll_locationBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:background="@mipmap/location_bar_bg">
+
+                <TextView
+                    android:id="@+id/tv_located"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/ic_located"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20"
+                    android:text="定位"/>
+
+                <TextView
+                    android:id="@+id/tv_satellite"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/ic_satellite"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20"
+                    android:text="卫星"/>
+
+                <TextView
+                    android:id="@+id/tv_compass"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/ic_compass"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20"
+                    android:text="指南"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>
